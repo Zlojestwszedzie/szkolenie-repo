@@ -18,7 +18,7 @@ jobs:
               working-directory: docker-app
               run: |
                 set -eux
-                IMAGE_TAG=my-nginx:$(GITHUB_SHA)
+                IMAGE_TAG=my-nginx:${GITHUB_SHA}
                 docker build -t "${IMAGE_TAG}" .
                 echo "IMAGE_TAG=${IMAGE_TAG}" >> "$GITHUB_ENV"
 
