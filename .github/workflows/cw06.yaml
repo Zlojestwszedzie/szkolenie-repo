@@ -1,0 +1,17 @@
+name: "06 - Context"
+on:
+    workflow_dispatch:
+
+jobs:
+    echo-data:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Print context"
+              run: |
+                  echo "Event name: ${{ github.event }}"
+                  echo "Ref: ${{ github.ref }}"
+                  echo "SHA: ${{ github.sha }}"
+                  echo "Actor: ${{ github.actor }}"
+                  echo "Workflow name: ${{ github.workflow }}"
+                  echo "Run ID: ${{ github.run_id }}"
+                  echo "Run number: ${{ github.run_number }}"
